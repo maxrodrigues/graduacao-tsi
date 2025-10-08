@@ -1,0 +1,167 @@
+body {
+    background: #1A202C;
+    color: #BDBDBD;
+    font-family: "Noto Sans", "sans-serif";
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo svg {
+    width: 32px;
+    height: 32px;
+    color: #6B46C1;
+}
+
+.logo h1 {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Space Grotesk", "sans-serif";
+    margin-left: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .items {
+    margin: 0 10px;
+}
+
+.navbar .items a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
+
+.navbar .items a:hover {
+    color: #6B46C1;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.container .left {
+    width: 30%;
+    padding: 5px;
+    margin: 10px;
+}
+
+.title {
+    color: #FFF;
+    font-size: 36px;
+    margin-bottom: 0;
+}
+
+.sub-title {
+    margin-top: 0;
+    color: #6B46C1;
+    font-size: 18px;
+}
+
+.description {
+    text-align: justify;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.links .item {
+    margin: 3px 0;
+    display: flex;
+    align-items: center;
+}
+
+.links .item i {
+    width: 20px;
+    margin: 0 5px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #BDBDBD;
+}
+
+.links a:hover {
+    color: #6B46C1;
+}
+
+.container .right {
+    width: 70%;
+    padding: 5px;
+    margin: 10px;
+}
+
+.right h3 {
+    font-weight: bold;
+    font-size: 26px;
+    border-left: 5px solid #6B46C1;
+    padding-left: 10px;
+}
+
+.card {
+    background: #2D3748;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 25px 0;
+    font-size: 14px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.company-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company {
+    font-weight: bold;
+    font-size: 24px;
+    color: #FFF;
+}
+
+.date {
+    //
+}
+
+.position {
+    color: #3B82F7;
+    font-size: 16px;
+}
+
+.card-body ul {
+    padding-left: 30px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.card-body li {
+    margin: 5px 0;
+    text-align: justify;
+    line-height: 1.3;
+}
+
