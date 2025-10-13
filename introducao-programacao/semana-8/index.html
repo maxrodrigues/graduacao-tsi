@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Byte Burguer</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="px-10">
+    <h2 class="text-3xl font-bold mt-4">Byte Burguer 🍔</h2>
+    <p class="text-xs text-red-400">Abra o console (F12 → aba “Console”) para ver o resumo do pedido.</p>
+</body>
+<script>
+    /* ======================================= */
+    /* ETAPA 1: Variáveis Iniciais             */
+    /* ======================================= */
+
+    const precoHamburguer = 15.0;
+    const precoBatata = 8.0;
+    const precoRefrigerante = 6.0;
+
+    let pedidoHamburguer = confirm ("Gostaria de acrescentar um Hambúrguer de R$15 em seu pedido?");
+    let pedidoBatata = confirm ("Quer acrescentar uma batata de R$8 em seu pedido?");
+    let pedidoRefri = confirm ("Gostaria de acrescentar um refrigerante de 6 reais?");
+
+    let pedidoViagem = confirm("O pedido será para a viagem?");
+    let clienteFidelidade = confirm("Você faz parte do programa de fidelidade");
+
+    let pontosFidelidade = 0;
+    let totalFinal = 0.0;
+    let totalBruto = 0.0;
+    let descontoTaxa = 0.0;
+
+    /* ======================================== */
+    /* ETAPA 2: Cálculo do Total Bruto          */
+    /* ======================================== */
+
+    if (pedidoHamburguer) {
+        totalBruto += precoHamburguer;
+    }
+
+    if (pedidoBatata) {
+        totalBruto += precoBatata;
+    }
+
+    if (pedidoRefri) {
+        totalBruto += precoRefrigerante;
+    }
+
+    /* ========================================= */
+    /* ETAPA 3: Lógica de Decisão e Fidelidade   */
+    /* ========================================= */
+
+    // 1. Taxa de Serviço: Se o pedido NÃO for para viagem
+    if (! pedidoViagem) {
+        descontoTaxa += 2.50
+    }
+
+    // 2. Estrutura de Fidelidade
+    if (clienteFidelidade) {
+        pontosFidelidade = parseInt(prompt("Quantos pontos você tem?"));
+        if (totalBruto > 30.00 && pontosFidelidade > 100) {
+            // 2.1. Quando o pedido for maior que 30 reais e cliente possuir mais que 100 pontos de fidelidade
+            descontoTaxa -= totalBruto * 0.15;
+        } else if (pontosFidelidade < 100 && pontosFidelidade > 50) {
+            // 2.2. Quando pontos de fidelidade for maior que 50
+            descontoTaxa -= 5.00;
+        } else {
+            // 2.3. Adicionar 10 pontos de fidelidade
+            pontosFidelidade += 10;
+        }
+    } else {
+        // 2.3. Incentivo quando pedido for para viagem
+        if (pedidoViagem) {
+            descontoTaxa -= 3.0;
+        }
+    }
+
+    /* ======================================= */
+    /* ETAPA 4: Conclusão e Saída              */
+    /* ======================================= */
+
+    totalFinal = totalBruto + descontoTaxa;
+
+    console.log("\n");
+    console.log("===== BYTE BURGUER - RESUMO DO PEDIDO =====");
+
+    console.log(`Total Bruto: R$ ${totalBruto.toFixed(2)}`);
+    console.log(`Descontos/Taxas aplicadas: R$ ${descontoTaxa.toFixed(2)}`);
+    console.log(`Total Final: R$ ${totalFinal.toFixed(2)}`);
+    console.log(`Pontos de Fidelidade: ${pontosFidelidade}`);
+
+    console.log("=============================================");
+</script>
+</html>
